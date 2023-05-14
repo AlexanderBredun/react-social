@@ -1,0 +1,14 @@
+html, body{
+    height: 100%;
+}
+body{
+    font-size: var(--fz-size-m);
+    line-height: var(--lh-size-m);
+    background: var(--bg-main);
+    color: var(--color-primary);
+}
+
+
+a{
+    color: var(--color-secondary);
+}
