@@ -24,6 +24,6 @@ export default function WebpackBuildConfig(options: ConfigOptions): Configuratio
         module: {
           rules: BuildLoaders(options),
         },
-        resolve: BuildResolvers(),
+        resolve: BuildResolvers(options),
     }
 }

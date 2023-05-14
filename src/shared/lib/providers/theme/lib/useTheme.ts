@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import themeContext, { LOCAL_STORAGE_THEME_KEY, eThemes } from "../context/theme/context";
+import themeContext, { LOCAL_STORAGE_THEME_KEY, eThemes } from "./context";
 
 export default function useTheme(){
     const {theme, setTheme} = useContext(themeContext)

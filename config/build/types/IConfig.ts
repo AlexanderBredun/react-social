@@ -4,6 +4,7 @@ export interface Paths{
     entry: string;
     output: string;
     template: string;
+    src: string;
 }
 
 export interface EnvVars{

@@ -2,13 +2,12 @@
 
 import './styles/index.scss'
 import { Link, Route, Routes } from 'react-router-dom';
-import LazyAbout from './pages/about/lazy';
-import LazyHome from './pages/home/lazy';
+
 import { Suspense } from 'react';
-
-
-import useTheme from './hooks/useTheme';
-import { classNames } from './helpers/classNames/classNames';
+import { useTheme } from '@/shared/lib/providers/theme';
+import { classNames } from '@/shared/lib/helpers';
+import { AboutPage } from '@/pages/about';
+import { HomePage } from '@/pages/home';
 
 function App() {
 
@@ -37,8 +36,8 @@ function App() {
       </nav>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path={'/about'} element={<LazyAbout/>} />
-          <Route path={'/'} element={<LazyHome/>} />
+          <Route path={'/about'} element={<AboutPage/>} />
+          <Route path={'/'} element={<HomePage/>} />
         </Routes>
       </Suspense>
     
