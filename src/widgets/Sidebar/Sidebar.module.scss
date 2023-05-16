@@ -1,0 +1,32 @@
+.aside-block{
+  width: var(--sidebar-width-full);
+  height: calc(var(--doc-height, 100vh) - var(--navbar-height));
+  background: var(--sidebar-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--def-padding-y) var(--def-padding-x);
+  overflow: auto;
+  transition: .3s;
+
+  &.collapsed{
+    width: var(--sidebar-width-toggled);
+  }
+
+  &__switchers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > * { 
+      margin: 0 1rem 0 0;
+
+      &:last-child{
+        margin: 0;
+      }
+    }
+     
+  }
+}

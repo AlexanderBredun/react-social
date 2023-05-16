@@ -1,0 +1,30 @@
+.navbar{
+  height: var(--navbar-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;    
+  background: var(--navbar-bg);
+  padding: 0 var(--def-padding-x); 
+
+  &__right{  
+    display: flex;
+    justify-content: flex-end;  
+    align-items: center;
+  } 
+
+  &__nav{
+    ul{
+      margin-left: auto;
+      margin-right: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+            
+      li{
+        margin: 0 1rem 0 0;
+      }
+    }
+       
+        
+  }
+}

@@ -1,0 +1,17 @@
+.appLink{
+  &.underline{
+    text-decoration: underline;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+    
+  &.dashed{
+    text-decoration: underline dashed;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}

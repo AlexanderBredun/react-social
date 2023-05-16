@@ -1,14 +1,50 @@
 html, body{
-    height: 100%;
+  height: var(--doc-height, 100vh)
 }
+
+html {
+  font-size: 62.5%;
+
+  input[type='button'] {
+    cursor: pointer;
+  }
+
+  input[disabled] {
+    cursor: default;
+  }
+
+  @media only screen and(max-width: $media_desktop),
+    only screen and(max-device-width: $media_desktop) {
+    font-size: 9px;
+  }
+
+  @media only screen and(max-width: $media_tablet),
+    only screen and(max-device-width: $media_tablet) {
+    font-size: 8px;
+  }
+}
+
 body{
-    font-size: var(--fz-size-m);
-    line-height: var(--lh-size-m);
-    background: var(--bg-main);
-    color: var(--color-primary);
+  font-size: var(--fz-size-m);
+  line-height: var(--lh-size-m);
+  background: var(--bg-main);
+  color: var(--color-primary);
 }
 
 
 a{
-    color: var(--color-secondary);
+  color: var(--link-color);
+}
+
+.page-with-sidebar{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.page-wrapper{
+  padding: var(--def-padding-y) var(--def-padding-x);
+  flex-grow: 1;
+  overflow: auto;
+  height: calc(var(--doc-height, 100vh) - var(--navbar-height));
 }

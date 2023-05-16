@@ -1,10 +1,29 @@
 :root{
-    --fz-size-m: 16px;
-    --lh-size-m: 1.5;
-    --fz-size-l: 24px;
-    --lh-size-l: 1.4;
-    --font-default: 'Consolas', 'Courier New', monospace;
-    --bg-main: rgb(224, 221, 221);
-    --color-primary: black;
-    --color-secondary: rgb(54, 52, 52);
+  --fz-size-m: 16px;
+  --lh-size-m: 1.5;
+  --fz-size-l: 24px;
+  --lh-size-l: 1.4;
+  --font-default: 'Consolas', 'Courier New', monospace;
+  --bg-main: rgb(224 221 221);
+  --color-primary: black;
+  --color-secondary: rgb(54 52 52);
+  --navbar-bg: rgb(157 96 207);
+  --sidebar-bg: rgb(116 54 167);
+  --link-color: rgb(10 48 170);
+
+
+  // sizes
+  --navbar-height: 5rem;
+  --sidebar-width-full: 30rem;
+  --sidebar-width-toggled: 8rem;
+
+  // spaces
+  --def-padding-x: 2rem;
+  --def-padding-y: 5rem;
+
+    
 }
+
+$media_desktop: 1200px;
+$media_tablet: 800px;
+$media_phone: 580px;

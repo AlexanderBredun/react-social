@@ -1,49 +1,32 @@
+import "./styles/index.scss";
+import { classNames } from "@/shared/lib/helpers";
+import { AppRouter } from "./providers/router";
+import { Navbar } from "@/widgets/Navbar";
+
+import { Sidebar } from "@/widgets/Sidebar";
+import { useRealHeight } from "./hooks/useRealHeight";
+
+import { Suspense } from "react";
 
 
-import './styles/index.scss'
-import { Link, Route, Routes } from 'react-router-dom';
 
-import { Suspense } from 'react';
-import { useTheme } from '@/shared/lib/providers/theme';
-import { classNames } from '@/shared/lib/helpers';
-import { AboutPage } from '@/pages/about';
-import { HomePage } from '@/pages/home';
 
 function App() {
 
-  const {setTheme} = useTheme()
+	useRealHeight();
 
- 
-
-  return (
-    <div className={classNames('app')}>
-      <button onClick={setTheme}>
-        Toggle
-      </button>
-      <nav>
-        <ul>
-          <li>
-            <Link to={'/'}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to={'/about'}>
-              About
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path={'/about'} element={<AboutPage/>} />
-          <Route path={'/'} element={<HomePage/>} />
-        </Routes>
-      </Suspense>
-    
-    </div>
+	return (
+		<div className={classNames("app")}>
+			<Suspense fallback="">
+				<Navbar />
+				<div className='page-with-sidebar'>
+					<Sidebar />
+					<AppRouter />
+				</div>
+			</Suspense>
+		</div>
    
-  )
+	);
 }
 
-export default App
+export default App;

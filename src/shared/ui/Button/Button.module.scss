@@ -1,0 +1,12 @@
+.btn{
+  cursor: pointer;
+
+  &.clear{
+    background: transparent;
+    padding: 0;
+    border: none;
+    color: var(--link-color);
+    font-size: var(--fz-size-m);
+    line-height: 1;
+  }
+}
