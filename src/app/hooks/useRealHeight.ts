@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export function useRealHeight(){
 
@@ -6,13 +6,13 @@ export function useRealHeight(){
 
 		const resizeHandler = ()=> {
 			const doc = document.documentElement;
-			doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+			doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
 		};
 		resizeHandler();
-		window.addEventListener("resize", resizeHandler);
+		window.addEventListener('resize', resizeHandler);
 
 		return ()=> {
-			window.removeEventListener("resize", resizeHandler);
+			window.removeEventListener('resize', resizeHandler);
 		};
 	}, []);
 

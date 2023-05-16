@@ -1,12 +1,12 @@
-import { classNames } from "@/shared/lib/helpers";
-import { FC } from "react";
+import { classNames } from '@/shared/lib/helpers';
+import { FC } from 'react';
 
 
-import cls from "./Navbar.module.scss";
+import cls from './Navbar.module.scss';
 
-import { AppLink } from "@/shared/ui/AppLink";
-import { eVariant } from "@/shared/ui/AppLink/AppLink";
-import { useTranslation } from "react-i18next";
+import { AppLink } from '@/shared/ui/AppLink';
+import { eVariant } from '@/shared/ui/AppLink/AppLink';
+import { useTranslation } from 'react-i18next';
 
 
 interface Props {
@@ -22,20 +22,20 @@ export const Navbar: FC<Props> = ({ className }) => {
 
 	return (
 		<div className={classNames(cls.navbar, [className])}>
-			<div className={classNames(cls["navbar__left"])}>
-				<h1>Logo</h1>
+			<div className={classNames(cls['navbar__left'])}>
+				<h1>123</h1>
 			</div>
-			<div className={classNames(cls["navbar__right"])}>
+			<div className={classNames(cls['navbar__right'])}>
 				<nav className={classNames(cls.navbar__nav)}>
 					<ul>
 						<li>
-							<AppLink to={"/"}>
-								{t("header.linkHome")}
+							<AppLink to={'/'}>
+								{t('header.linkHome')}
 							</AppLink>
 						</li>
 						<li>
-							<AppLink variant={eVariant.UNDERDASH} to={"/about"}>
-								{t("header.linkAbout")}
+							<AppLink variant={eVariant.UNDERDASH} to={'/about'}>
+								{t('header.linkAbout')}
 							</AppLink>
 						</li>
 					</ul>

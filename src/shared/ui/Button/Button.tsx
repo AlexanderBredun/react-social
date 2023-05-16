@@ -1,9 +1,9 @@
-import { classNames } from "@/shared/lib/helpers";
-import React, { ButtonHTMLAttributes, FC } from "react";
-import cls from "./Button.module.scss";
+import { classNames } from '@/shared/lib/helpers';
+import React, { ButtonHTMLAttributes, FC } from 'react';
+import cls from './Button.module.scss';
 
 export enum eBtnVariant{
-    CLEAR = "clear",
+    CLEAR = 'clear',
 }
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {

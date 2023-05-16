@@ -1,11 +1,11 @@
-import { classNames } from "@/shared/lib/helpers";
-import React, { FC } from "react";
-import { Link, LinkProps } from "react-router-dom";
-import cls from "./AppLink.module.scss";
+import { classNames } from '@/shared/lib/helpers';
+import React, { FC } from 'react';
+import { Link, LinkProps } from 'react-router-dom';
+import cls from './AppLink.module.scss';
 
 export enum eVariant{
-    UNDERLINE = "underline",
-    UNDERDASH = "dashed"
+    UNDERLINE = 'underline',
+    UNDERDASH = 'dashed'
 }
 
 interface Props extends LinkProps{

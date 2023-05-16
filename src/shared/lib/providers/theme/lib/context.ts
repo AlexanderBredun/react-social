@@ -1,8 +1,8 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 export enum eThemes{
-    light = "light-theme",
-    dark = "dark-theme",
+    light = 'light-theme',
+    dark = 'dark-theme',
   }
 
 export interface IThemes{
@@ -18,7 +18,7 @@ const themeContext = createContext<IThemes>({});
 
 export default themeContext;
 
-const LOCAL_STORAGE_THEME_KEY = "theme";
+const LOCAL_STORAGE_THEME_KEY = 'theme';
 
 export {
 	LOCAL_STORAGE_THEME_KEY

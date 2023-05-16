@@ -28,15 +28,16 @@
 		],
 		"object-curly-spacing": ["error", "always"],
 		"@typescript-eslint/no-unused-vars": "warn",
-		"i18next/no-literal-string": ["error", { "markupOnly": true }],
+		"i18next/no-literal-string": ["error", { "markupOnly": true,  "mode": "jsx-text-only" }],
 		"react/react-in-jsx-scope": "off",
+		"no-mixed-spaces-and-tabs": "off",
 		"linebreak-style": [
 			"error",
 			"windows"
 		],
 		"quotes": [
 			"error",
-			"double"
+			"single"
 		],
 		"semi": [
 			"error",

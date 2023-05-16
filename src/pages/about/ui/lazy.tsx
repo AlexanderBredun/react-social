@@ -1,5 +1,5 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-const lazyAbout = lazy(()=> import("./index"));
+const lazyAbout = lazy(()=> import('./index'));
 
 export default lazyAbout;

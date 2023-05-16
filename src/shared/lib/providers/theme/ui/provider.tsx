@@ -1,6 +1,6 @@
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, useMemo, useState } from 'react';
 
-import ThemeContext, { LOCAL_STORAGE_THEME_KEY, eThemes } from "../lib/context";
+import ThemeContext, { LOCAL_STORAGE_THEME_KEY, eThemes } from '../lib/context';
 
 const ThemeProvider:FC = ({ children })=>  {
 

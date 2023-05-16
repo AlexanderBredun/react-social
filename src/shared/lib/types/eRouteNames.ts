@@ -1,5 +1,5 @@
 export enum eRouteNames {
-    MAIN = "/",
-    ABOUT = "/about",
+    MAIN = '/',
+    ABOUT = '/about',
    
 }

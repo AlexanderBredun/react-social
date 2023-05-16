@@ -1,4 +1,4 @@
-import lazyHome from "./ui/lazy";
+import lazyHome from './ui/lazy';
 
 export {
 	lazyHome as HomePage

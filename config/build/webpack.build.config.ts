@@ -1,10 +1,10 @@
 
-import { Configuration } from "webpack";
-import BuildLoaders from "./BuildLoaders";
-import BuildPlugins from "./BuildPlugins";
-import BuildResolvers from "./BuildResolvers";
-import { ConfigOptions } from "./types/IConfig";
-import BuildDevServer from "./BuildDevServer";
+import { Configuration } from 'webpack';
+import BuildLoaders from './BuildLoaders';
+import BuildPlugins from './BuildPlugins';
+import BuildResolvers from './BuildResolvers';
+import { ConfigOptions } from './types/IConfig';
+import BuildDevServer from './BuildDevServer';
 
 export default function WebpackBuildConfig(options: ConfigOptions): Configuration{
 
@@ -15,10 +15,10 @@ export default function WebpackBuildConfig(options: ConfigOptions): Configuratio
 		entry: paths.entry,
 		output: {
 			path: paths.output,
-			filename: "[name].[contenthash].js",
+			filename: '[name].[contenthash].js',
 			clean: true
 		},
-		devtool: isDev ? "inline-source-map" : undefined,
+		devtool: isDev ? 'inline-source-map' : undefined,
 		devServer: isDev ? BuildDevServer(options) : undefined,
 		plugins: BuildPlugins(options),
 		module: {

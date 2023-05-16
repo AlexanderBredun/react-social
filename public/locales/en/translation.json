@@ -1,9 +1,10 @@
 {
-    "toggle": "Toggle",
-    "тестовый текст": "Test text",
-    "langSwitcher": "English",
-    "header": {
-        "linkAbout": "About",
-        "linkHome": "Home"
-    }
+  "toggle": "Toggle",
+  "тестовый текст": "Test text",
+  "langSwitcher": "English",
+  "header": {
+    "linkAbout": "About",
+    "linkHome": "Home"
+  },
+  "loading": "Loading"
 }
