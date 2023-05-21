@@ -31,6 +31,8 @@ jobs:
         run: npm run lint:scss
       - name: run unit tests
         run: npm run test:unit
-      - name: run ui tests
-        run: npm run test:ui:ci
+      - name: run storybook build
+        run: npm run storybook:build
+      - name: run tests ui
+        run: npx http-server storybook-static --port 6006 --silent & npx wait-on tcp:6006 && npm run test:ui
      
