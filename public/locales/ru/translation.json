@@ -6,5 +6,8 @@
     "linkAbout": "О сайте",
     "linkHome": "Главная"
   },
-  "loading": "Загрузка"
+  "loading": "Загрузка",
+  "notFound": {
+    "title": "Can not find this page"
+  }
 }

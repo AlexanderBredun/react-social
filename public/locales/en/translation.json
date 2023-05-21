@@ -6,5 +6,8 @@
     "linkAbout": "About",
     "linkHome": "Home"
   },
-  "loading": "Loading"
+  "loading": "Loading",
+  "notFound": {
+    "title": "Этой страницы не существует"
+  }
 }

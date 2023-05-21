@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/helpers';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 
 import cls from './Navbar.module.scss';
@@ -10,18 +10,27 @@ import { useTranslation } from 'react-i18next';
 
 
 interface Props {
-    className?: string
-   
+	className?: string
+
 }
 
 
-
 export const Navbar: FC<Props> = ({ className }) => {
-    
+
 	const { t } = useTranslation();
+
+	const [error, setError] = useState(false);
+
+	useEffect(()=> {
+		if(error){
+			throw new Error('Error custom');
+		}
+		
+	}, [error]);
 
 	return (
 		<div className={classNames(cls.navbar, [className])}>
+			<button onClick={()=> setError(true)}>throw</button>
 			<div className={classNames(cls['navbar__left'])}>
 				<h1>123</h1>
 			</div>
@@ -40,7 +49,7 @@ export const Navbar: FC<Props> = ({ className }) => {
 						</li>
 					</ul>
 				</nav>
-                
+
 			</div>
 
 

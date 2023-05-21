@@ -1,3 +1,4 @@
 export {
-	AppLink
+	AppLink,
+	eVariant,
 } from './AppLink';

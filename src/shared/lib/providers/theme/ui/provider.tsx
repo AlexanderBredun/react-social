@@ -7,7 +7,6 @@ const ThemeProvider:FC = ({ children })=>  {
 	const curTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as eThemes || eThemes.light;
 
 
-
 	const [theme, setTheme] = useState<eThemes>(curTheme);
 
 	const themeValue = useMemo(()=> {

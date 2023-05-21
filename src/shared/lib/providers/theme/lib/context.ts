@@ -11,9 +11,7 @@ export interface IThemes{
   }
 
 
-
 const themeContext = createContext<IThemes>({});
-
   
 
 export default themeContext;

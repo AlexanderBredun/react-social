@@ -1,0 +1,34 @@
+name: checks default
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install packages
+        run: npm ci
+      - name: build prod project
+        run: npm run build:prod
+      - name: run ts linter
+        run: npm run lint:ts
+      - name: run css linter
+        run: npm run lint:scss
+      - name: run unit tests
+        run: npm run test:unit
+     

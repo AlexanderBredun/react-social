@@ -5,7 +5,7 @@ function Home() {
 	const { t } = useTranslation('home');
   
 	return (
-		<div>{t('страница home')}</div>
+		<div>{t('title')}</div>
 	);
 }
 

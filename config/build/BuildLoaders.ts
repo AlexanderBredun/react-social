@@ -1,6 +1,7 @@
 import { RuleSetRule } from 'webpack';
 import { ConfigOptions } from './types/IConfig';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { getCssLoader } from './helpers/getCssLoader';
 
 export default function BuildLoaders(options: ConfigOptions): RuleSetRule[] {
 
@@ -29,26 +30,7 @@ export default function BuildLoaders(options: ConfigOptions): RuleSetRule[] {
 		],
 	};
 
-	const cssLoader: RuleSetRule = {
-		test: /\.s[ac]ss$/i,
-		use: [
-			// Creates `style` nodes from JS strings
-			options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-			// Translates CSS into CommonJS
-			{
-				loader: 'css-loader',
-				options: {
-					modules: {
-						auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-						localIdentName: options.isDev ? '[local]_[sha1:hash:hex:4]' : '[sha1:hash:hex:4]'
-					},
-        
-				},
-			},
-			// Compiles Sass to CSS
-			'sass-loader',
-		],
-	};
+	const cssLoader: RuleSetRule = getCssLoader(options.isDev)
 
 	const tsLoader: RuleSetRule =  {
 		test: /\.tsx?$/,

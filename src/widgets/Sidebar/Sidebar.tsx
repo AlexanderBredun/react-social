@@ -10,19 +10,22 @@ import { useTranslation } from 'react-i18next';
 export const Sidebar:FC = ()=> {
 
 	const { t } = useTranslation();
+	
 
 	const [collapsed, setCollapsed] = useState(false);
 
-	const toggle = ()=> setCollapsed(val => !val);
+	const toggle = async ()=> await setCollapsed(val => !val);
+
+
 
 	return (
-		<aside className={classNames(cls['aside-block'], { [cls.collapsed]: collapsed })}>
-			<Button onClick={toggle}>
+		<aside data-testid="sidebar" className={classNames(cls['aside-block'], { [cls.collapsed]: collapsed })}>
+			<Button data-testid="toggle-btn" onClick={toggle}>
             	{t('toggle')}
 			</Button>
 			<nav></nav>
 			<div className={cls['aside-block__switchers']}>
-           
+			
 				<ThemeSwitcher  />
 				<LangSwitcher  />
 			</div>

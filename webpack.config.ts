@@ -5,7 +5,6 @@ import WebpackBuildConfig from './config/build/webpack.build.config';
 import { EnvVars, Paths } from './config/build/types/IConfig';
 
 
-
 export default (env: EnvVars)=> {
 	const paths: Paths = {
 		entry: path.resolve(__dirname, 'src', 'index.tsx'),
