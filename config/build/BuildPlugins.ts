@@ -18,13 +18,13 @@ export default function BuildPlugins(options: ConfigOptions):webpack.WebpackPlug
 		new webpack.DefinePlugin({
 			__IS_DEV__: options.isDev
 		}),
-	]
+	];
 
 	if(options.isDev){
-		plugins.push(new ReactRefreshWebpackPlugin())
+		plugins.push(new ReactRefreshWebpackPlugin());
 		plugins.push(new BundleAnalyzerPlugin({
 			openAnalyzer: false
-		}))
+		}));
 	}
-	return plugins
+	return plugins;
 }
