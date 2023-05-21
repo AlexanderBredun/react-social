@@ -34,10 +34,8 @@
   "react/react-in-jsx-scope": "off",
   "no-mixed-spaces-and-tabs": "off",
   "no-multiple-empty-lines": "error",
-  "linebreak-style": [
-   "error",
-   "windows"
-  ],
+  
+  "linebreak-style": "off",
   "quotes": [
    "error",
    "single"
