@@ -9,5 +9,8 @@
   "loading": "Загрузка",
   "notFound": {
     "title": "Can not find this page"
-  }
+  },
+  "error.title": "Ошибка",
+  "error.btn": "Обновить",
+  "errorPage.title": "Ошибка при загрузке этой страницы"
 }

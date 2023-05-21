@@ -9,5 +9,8 @@
   "loading": "Loading",
   "notFound": {
     "title": "Этой страницы не существует"
-  }
+  },
+  "error.title": "Error",
+  "error.btn": "Try again",
+  "errorPage.title": "Error while loading this page"
 }

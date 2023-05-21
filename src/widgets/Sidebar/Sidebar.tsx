@@ -17,7 +17,6 @@ export const Sidebar:FC = ()=> {
 	const toggle = async ()=> await setCollapsed(val => !val);
 
 
-
 	return (
 		<aside data-testid="sidebar" className={classNames(cls['aside-block'], { [cls.collapsed]: collapsed })}>
 			<Button data-testid="toggle-btn" onClick={toggle}>

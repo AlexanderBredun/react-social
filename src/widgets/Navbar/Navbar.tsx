@@ -18,19 +18,10 @@ interface Props {
 export const Navbar: FC<Props> = ({ className }) => {
 
 	const { t } = useTranslation();
-
-	const [error, setError] = useState(false);
-
-	useEffect(()=> {
-		if(error){
-			throw new Error('Error custom');
-		}
-		
-	}, [error]);
+	
 
 	return (
 		<div className={classNames(cls.navbar, [className])}>
-			<button onClick={()=> setError(true)}>throw</button>
 			<div className={classNames(cls['navbar__left'])}>
 				<h1>123</h1>
 			</div>

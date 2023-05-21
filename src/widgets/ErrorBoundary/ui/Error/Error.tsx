@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props{
     isLocal: boolean;
@@ -6,27 +7,30 @@ interface Props{
 }
 
 function Error({ isLocal, reset }: Props) {
+
+	const { t } = useTranslation();
+
 	if(isLocal){
 		return (
 			<div>
-				<h2>Error</h2>
+				<h2>{t('error.title')}</h2>
 				<button
 					type="button"
 					onClick={() => reset()}
 				>
-                              Try again?
+					{t('error.btn')}
 				</button>
 			</div>
 		);
 	}
 	return (
 		<div>
-			<h2>Error while loading this page</h2>
+			<h2>{t('errorPage.title')}</h2>
 			<button
 				type="button"
 				onClick={() => reset()}
 			>
-              			Try again?
+              			{t('error.btn')}
 			</button>
 		</div>
 	);
