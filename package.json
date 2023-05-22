@@ -82,7 +82,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "loki": {
-    "chromeDockerUseCopy": true,
+
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
