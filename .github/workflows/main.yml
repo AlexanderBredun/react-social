@@ -26,11 +26,15 @@ jobs:
       - name: build prod project
         run: npm run build:prod
       - name: run ts linter
+        if: always()
         run: npm run lint:ts
       - name: run css linter
+        if: always()
         run: npm run lint:scss
       - name: run unit tests
+        if: always()
         run: npm run test:unit
       - name: run tests ui
+        if: always()
         run: npm run test:ui:ci
      

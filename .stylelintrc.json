@@ -3,6 +3,8 @@
     "rules": {
       "indentation": [2],
       "selector-class-pattern": null,
-      "scss/dollar-variable-pattern": null
+      "scss/dollar-variable-pattern": null,
+      "no-descending-specificity":  [ true, { "severity": "warning" }],
+      "function-linear-gradient-no-nonstandard-direction": null
     }
   }

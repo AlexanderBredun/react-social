@@ -10,6 +10,46 @@
   transition: .3s;
   padding: calc(var(--def-padding-y) * .6) 3rem calc(var(--def-padding-y) * .6) var(--def-padding-x);
 
+  .btn_toggle{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate3d(0, -50%, 0);
+    height: 100%;
+    width: 3rem;
+    transition: none;
+
+    &::before{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0, var(--bg-dark) 0%, var(--color-blue) 30%, var(--color-blue) 70%, var(--bg-dark) 100%);
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    svg{
+      transition: .3s;
+    }
+
+    &:hover{
+      &::before{
+        opacity: 1;
+      }
+
+      svg{
+        color: var(--bg-dark);
+      }
+    }
+
+   
+   
+  }
+
   .nav{
     width: 100%;
 
@@ -44,6 +84,7 @@
           svg{
             margin: 0 1.5rem 0 0;
           }
+
           span{
             transition: .3s .3s;
           }
@@ -68,43 +109,7 @@
     }
   }
 
-  .btn_toggle{
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate3d(0, -50%, 0);
-    height: 100%;
-    width: 3rem;
-    transition: none;
-
-    &::before{
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(0, var(--bg-dark) 0, var(--color-blue) 30%, var(--color-blue) 70%, var(--bg-dark) 100%);
-      opacity: 0;
-      transition: .3s;
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-    }
-
-    &:hover{
-      &::before{
-        opacity: 1;
-      }
-
-      svg{
-        color: var(--bg-dark);
-      }
-    }
-
-    svg{
-      transition: .3s;
-    }
-   
-  }
+  
 
   .switchers{
     display: flex;
@@ -126,11 +131,11 @@
     padding-right: var(--def-padding-x);
 
     .nav{
-
       li {
         a{
           justify-content: center;
         }
+
         span{
           transition: none;
           width: 0;
@@ -160,16 +165,18 @@
       transform: none;
       height: auto;
 
+      svg{
+        transform: rotate(180deg);
+        
+      }
+
       &:hover{
         svg{
           color: inherit;
         }
       }
 
-      svg{
-        transform: rotate(180deg);
-        
-      }
+    
     }
   }
 

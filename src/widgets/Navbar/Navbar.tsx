@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/helpers';
-import { FC} from 'react';
+import { FC } from 'react';
 
 
 import cls from './Navbar.module.scss';
