@@ -12,7 +12,7 @@
     "storybook:build": "storybook build",
     "test:ui": "npx loki test",
     "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run test:ui\" \"deelay\"",
-    "test:ui:d": "npx http-server ./storybook-static --port 6006 && npx loki test",
+    "test:ui:d": "concurrently -s first -k \"npm run storybook\" \"npm run test:ui\"",
     "test:ui:update": "npx loki update"
   },
   "dependencies": {
