@@ -34,5 +34,5 @@ jobs:
       - name: run storybook build
         run: npm run storybook:build
       - name: run tests ui
-        run: npx http-server storybook-static --port 6006 --silent & npx wait-on tcp:6006 && npm run test:ui
+        run: npm run test:ui:d
      
