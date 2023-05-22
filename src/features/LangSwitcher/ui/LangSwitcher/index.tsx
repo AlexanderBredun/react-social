@@ -3,14 +3,14 @@ import { eBtnVariant } from '@/shared/ui/Button/Button';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function LangSwitcher() {
+function LangSwitcher({shortLang}: {shortLang: boolean}) {
 	const { t, i18n } = useTranslation();
 	const toggle = async ()=> {
 		i18n.changeLanguage(i18n.language.includes('ru') ? 'en' : 'ru');
 	};
 	return (
 		<Button variant={eBtnVariant.CLEAR} onClick={toggle}>
-			{ t('langSwitcher') }
+			{ t(shortLang ? 'langSwitcher.short' : 'langSwitcher') }
 		</Button>
 	);
 }

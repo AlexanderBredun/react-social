@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/helpers';
-import { FC, useEffect, useState } from 'react';
+import { FC} from 'react';
 
 
 import cls from './Navbar.module.scss';
@@ -25,25 +25,6 @@ export const Navbar: FC<Props> = ({ className }) => {
 			<div className={classNames(cls['navbar__left'])}>
 				<h1>123</h1>
 			</div>
-			<div className={classNames(cls['navbar__right'])}>
-				<nav className={classNames(cls.navbar__nav)}>
-					<ul>
-						<li>
-							<AppLink to={'/'}>
-								{t('header.linkHome')}
-							</AppLink>
-						</li>
-						<li>
-							<AppLink variant={eVariant.UNDERDASH} to={'/about'}>
-								{t('header.linkAbout')}
-							</AppLink>
-						</li>
-					</ul>
-				</nav>
-
-			</div>
-
-
 		</div>
 	);
 };

@@ -5,9 +5,11 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 
 export default {
-	
+	clearMocks: true,
 	coveragePathIgnorePatterns: [
 	  '\\\\node_modules\\\\'
 	],
@@ -30,8 +32,11 @@ export default {
 	],
 	setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
 	moduleNameMapper: {
+		'\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
 		'^@/(.*)': '<rootDir>src/$1',
 		'\\.(css|scss)$': 'identity-obj-proxy',
+		
+		
 	}
 	
 };

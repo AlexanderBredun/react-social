@@ -1,11 +1,15 @@
 .dark-theme{
-  --bg-main: rgb(37 35 35);
-  --bg-main-inversed: rgb(224 221 221);
-  --color-primary: rgb(209 200 200);
+  --bg-main: #0C1214;
+  --bg-dark: #151C1F;
+  --bg-light: #090F11;
+  --bg-btn: #491f97;
+  --bg-btn-darken: #37127a;
+  --bg-main-inversed: #EFF5F7;
+  --color-primary: #DBDBDB;
   --color-secondary: rgb(233 225 225);
-  --link-color: rgb(35 211 218);
-  --navbar-bg: rgb(123 11 214);
-  --sidebar-bg: rgb(72 7 126);
-  --btn-bg: rgb(9 219 131);
-  --btn-color: rgb(74 78 74 / 97.9%);
+  --color-hint: #555;
+  --color-red: #D95757;
+  --color-green: #6CD98B;
+  --color-blue: #74A2B2;
+  --color-blue-500: #5ED3F3;
 } 

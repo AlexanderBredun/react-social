@@ -29,11 +29,13 @@ body{
   line-height: var(--lh-size-m);
   background: var(--bg-main);
   color: var(--color-primary);
+  font-family: var(--font-default);
 }
 
 
 a{
-  color: var(--link-color);
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 .page-with-sidebar{

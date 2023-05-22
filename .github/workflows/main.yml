@@ -31,8 +31,6 @@ jobs:
         run: npm run lint:scss
       - name: run unit tests
         run: npm run test:unit
-      - name: run storybook build
-        run: npm run storybook:build
       - name: run tests ui
-        run: npm run test:ui:d
+        run: npm run test:ui:ci
      

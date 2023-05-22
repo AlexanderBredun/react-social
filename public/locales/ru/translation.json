@@ -2,6 +2,7 @@
   "тестовый текст": "тестовый текст",
   "toggle": "Переключить",
   "langSwitcher": "Русский",
+  "langSwitcher.short": "Ру",
   "header": {
     "linkAbout": "О сайте",
     "linkHome": "Главная"

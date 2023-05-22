@@ -1,6 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import { getCssLoader } from '../config/build/helpers/getCssLoader';
 import path from "path";
+import { RuleSetRule } from "webpack";
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -20,6 +21,18 @@ const config: StorybookConfig = {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.
+
+    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+      if (/svg/.test(rule.test as string)) {
+          return { ...rule, exclude: /\.svg$/i };
+      }
+
+      return rule;
+  });
+  config.module.rules.push({
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+});
 
     config.resolve?.extensions?.push('.tsx', '.ts', '.js')
     config.resolve.alias = {

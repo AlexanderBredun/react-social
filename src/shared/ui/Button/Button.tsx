@@ -7,14 +7,31 @@ export enum eBtnVariant{
     BORDERED = 'bordered',
 }
 
+
+export enum eBtnFontSize{
+    S = 'small',
+    L = 'large',
+    XL = 'xlarge',
+}
+
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     variant?: eBtnVariant
+    square?: boolean
+    fontSize?: eBtnFontSize
 }
 
-export const Button:FC<Props> = ({ children, variant, className, ...otherProps })=> {
+export const Button:FC<Props> = ({ children, variant, square, fontSize,  className, ...otherProps })=> {
+
+	const btnClasses = [
+		className,
+		cls[variant],
+		square ? cls.square : '',
+		cls[fontSize],
+	];
+
 	return (
-		<button  className={classNames(cls.btn, [className, cls[variant]])} {...otherProps}>
+		<button  className={classNames(cls.btn, btnClasses)} {...otherProps}>
 			{children}
 		</button>
 	);

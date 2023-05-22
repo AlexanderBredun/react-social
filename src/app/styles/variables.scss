@@ -1,18 +1,29 @@
 :root{
-  --fz-size-m: 16px;
+  --fz-size-sm: 1.2rem;
+  --lh-size-sm: 1.3;
+  --fz-size-m: 1.6rem;
   --lh-size-m: 1.5;
-  --fz-size-l: 24px;
+  --fz-size-l: 2.4rem;
   --lh-size-l: 1.4;
-  --font-default: 'Consolas', 'Courier New', monospace;
-  --bg-main: rgb(224 221 221);
-  --bg-main-inversed: rgb(37 35 35);
-  --color-primary: black;
+  --fz-size-xl: 3.2rem;
+  --lh-size-xl: 1.4;
+  --font-default: 'Nunito Sans', sans-serif;
+ 
+
+  // colors
+  --bg-main: #EFF5F7;
+  --bg-dark: #E2EEF1;
+  --bg-light: #FFF;
+  --bg-btn: #b0dceb;
+  --bg-btn-darken: #8ac7db;
+  --bg-main-inversed: #0C1214;
+  --color-primary: #141C1F;
   --color-secondary: rgb(54 52 52);
-  --navbar-bg: rgb(157 96 207);
-  --sidebar-bg: rgb(185 143 219);
-  --btn-bg: rgb(250 75 221);
-  --btn-color: rgb(253 253 253 / 97.9%);
-  --link-color: rgb(45 47 182); 
+  --color-hint: #ADBCC0;
+  --color-red: #F77;
+  --color-green: #62DE85;
+  --color-blue: #5ED3F3;
+  --color-blue-500: #00C8FF;
 
 
   // sizes
