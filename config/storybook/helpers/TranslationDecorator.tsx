@@ -5,7 +5,7 @@ export const TranslationDecorator = (Story, context) => {
 	const { locale } = context.globals;
 
 	useEffect(() => {
-		testConfig.changeLanguage(locale);
+		testConfig.changeLanguage(locale); 
 	}, [locale]);
 	return (
 		<I18nextProvider i18n={testConfig}>
