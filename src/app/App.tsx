@@ -1,4 +1,4 @@
-import './styles/index.scss';
+
 import { classNames } from '@/shared/lib/helpers';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
@@ -21,7 +21,7 @@ function App() {
 				<ErrorBoundary isLocal>
 					<Navbar />
 				</ErrorBoundary>
-				
+
 				<div className='page-with-sidebar'>
 					<Sidebar />
 					<AppRouter />

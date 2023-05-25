@@ -17,6 +17,7 @@ export const Sidebar:FC = ()=> {
 
 	const { t } = useTranslation();
 	
+	console.log(AppLink);
 
 	const [collapsed, setCollapsed] = useState(false);
 

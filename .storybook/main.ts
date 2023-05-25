@@ -40,7 +40,7 @@ const config: StorybookConfig = {
       "@": path.resolve(__dirname, "..", "src")
     };
 
-    config.module.rules.push(getCssLoader(true));
+    config.module.rules.push(getCssLoader({isDev: true}));
 
     return config;
 

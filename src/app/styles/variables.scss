@@ -24,9 +24,10 @@
   --color-green: #62DE85;
   --color-blue: #5ED3F3;
   --color-blue-500: #00C8FF;
+  --modal-bg: rgba(0 0 0 / 50%);
 
 
-  // sizes
+  /* sizes */
   --navbar-height: 5rem;
   --sidebar-width-full: 30rem;
   --sidebar-width-toggled: 8rem;
@@ -35,9 +36,11 @@
   --def-padding-x: 2rem;
   --def-padding-y: 5rem;
 
+  // radius
+  --radius-def: 1.2rem;
+
+  // z-index
+  --z-modal: 10;
+
     
 }
-
-$media_desktop: 1200px;
-$media_tablet: 800px;
-$media_phone: 580px;

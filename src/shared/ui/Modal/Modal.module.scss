@@ -1,0 +1,69 @@
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--def-padding-x);
+
+  &.active{
+    .content{
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .content{
+    background: var(--bg-main);
+    border-radius: var(--radius-def);
+    width: 100%;
+    max-width: var(--popup-width-local, 70rem);
+    padding: var(--def-padding-y) var(--def-padding-x);
+    transition: .3s 2.3s;
+    transform: translate3d(0, -3rem, 0);
+  }
+} 
+
+.modalEnter .content {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.modalEnterActive .content {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.modalExit .content {
+  opacity: 1;
+}
+
+.modalExitActive .content {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.modalEnter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.modalEnterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.modalExit {
+  opacity: 1;
+}
+
+.modalExitActive {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}

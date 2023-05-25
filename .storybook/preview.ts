@@ -3,7 +3,7 @@ import '../src/app/styles/index.scss';
 import { ThemeDecorator } from "../config/storybook/helpers/ThemeDecorator";
 import { RouterDecorator } from "../config/storybook/helpers/RouterDecorator";
 import { eThemes } from '../src/shared/lib/providers/theme';
-import { i18nDecorator } from "../config/storybook/helpers/i18nDecorator";
+import { TranslationDecorator } from "../config/storybook/helpers/TranslationDecorator";
 
 
 const preview: Preview = {
@@ -46,7 +46,7 @@ const preview: Preview = {
     },
     
   },
-  decorators: [ThemeDecorator, RouterDecorator, i18nDecorator],
+  decorators: [ThemeDecorator, RouterDecorator, TranslationDecorator],
     
 };
 

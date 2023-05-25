@@ -1,11 +1,15 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { RuleSetRule } from 'webpack';
+import { ConfigOptions } from '../types/IConfig';
 
-export function getCssLoader(isDev: boolean): RuleSetRule{
+export function getCssLoader(options: ConfigOptions): RuleSetRule{
+
+	const { isDev, paths } = options;
 	return {
 		test: /\.s[ac]ss$/i,
 		use: [
 			// Creates `style` nodes from JS strings
+			
 			isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
 			// Translates CSS into CommonJS
 			{
@@ -19,7 +23,13 @@ export function getCssLoader(isDev: boolean): RuleSetRule{
 				},
 			},
 			// Compiles Sass to CSS
-			'sass-loader',
+			{
+				loader: 'sass-loader',
+				options: {
+				  sourceMap: true,
+				  additionalData: '@import "@/app/styles/mixins.scss";'
+			  },
+			}
 		],
 	};
 }

@@ -30,7 +30,7 @@ export default function BuildLoaders(options: ConfigOptions): RuleSetRule[] {
 		],
 	};
 
-	const cssLoader: RuleSetRule = getCssLoader(options.isDev);
+	const cssLoader: RuleSetRule = getCssLoader(options);
 
 	const tsLoader: RuleSetRule =  {
 		test: /\.tsx?$/,
