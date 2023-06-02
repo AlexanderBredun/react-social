@@ -1,9 +1,9 @@
 import type { Preview } from "@storybook/react";
 import '../src/app/styles/index.scss';
-import { ThemeDecorator } from "../config/storybook/helpers/ThemeDecorator";
-import { RouterDecorator } from "../config/storybook/helpers/RouterDecorator";
+import { ThemeDecorator } from "../src/shared/lib/helpers/storybook/ThemeDecorator";
+import { RouterDecorator } from "../src/shared/lib/helpers/storybook/RouterDecorator";
 import { eThemes } from '../src/shared/lib/providers/theme';
-import { TranslationDecorator } from "../config/storybook/helpers/TranslationDecorator";
+import { TranslationDecorator } from "../src/shared/lib/helpers/storybook/TranslationDecorator";
 
 
 const preview: Preview = {

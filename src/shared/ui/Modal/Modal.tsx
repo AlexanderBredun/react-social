@@ -3,7 +3,7 @@ import cls from './Modal.module.scss';
 import { Portal } from '../Portal';
 import { classNames } from '@/shared/lib/helpers';
 import { CSSTransition } from 'react-transition-group';
-import { eClasses } from '@/shared/lib/types/defTypes';
+import { eClasses } from '@/shared/lib/types';
 
 interface ModalProps{
     width?: string;
@@ -14,6 +14,7 @@ interface ModalProps{
 
 const Modal:FC<ModalProps> = ({ children, width, isOpen, onClose }) => {
 
+	
 	const containerClick = useCallback(()=> {
 		onClose();
 	}, [onClose]);
@@ -51,8 +52,8 @@ const Modal:FC<ModalProps> = ({ children, width, isOpen, onClose }) => {
 				exit: cls.modalExit,
 				exitActive: cls.modalExitActive,
 			}}>
-				<div ref={modalRef} className={classNames(cls.modal, { [cls.active]: isOpen })} style={style} onClick={containerClick}> 
-					<div className={cls.content} onClick={(e)=> e.stopPropagation()}>
+				<div ref={modalRef} className={classNames(cls.modal, { [cls.active]: isOpen })} style={style} onMouseDown={containerClick}> 
+					<div className={cls.content} onMouseDown={(e)=> e.stopPropagation()}>
 						{ children }
 					</div>
 				</div>

@@ -9,6 +9,14 @@
   padding: .8rem 1.6rem;
   font-size: var(--fz-size-m);
   transition: .3s;
+  display: block;
+  width: fit-content;
+  min-width: 200px;
+
+  &:disabled{
+    pointer-events: none;
+    filter: brightness(40%) saturate(283%);
+  }
 
   &:hover{
     background: var(--bg-btn-darken);
@@ -43,12 +51,14 @@
     border: none;
     color: var(--color-blue-500);
     line-height: 1;
+    min-width: auto;
   }
 
   &.square{
     aspect-ratio: 1;
     border-radius: 0;
     line-height: 1;
+    min-width: auto;
   }
   
 }

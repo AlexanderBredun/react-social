@@ -5,7 +5,8 @@
   "langSwitcher.short": "En",
   "header": {
     "linkAbout": "About",
-    "linkHome": "Home"
+    "linkHome": "Home",
+    "linkProfile": "Profile"
   },
   "loading": "Loading",
   "notFound": {
@@ -13,5 +14,9 @@
   },
   "error.title": "Error",
   "error.btn": "Try again",
-  "errorPage.title": "Error while loading this page"
+  "errorPage.title": "Error while loading this page",
+  "Enter": "Sign in",
+  "Name": "Name",
+  "Password": "Password",
+  "Leave": "Sign out"
 }

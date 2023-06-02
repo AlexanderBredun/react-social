@@ -5,7 +5,8 @@
   "langSwitcher.short": "Ру",
   "header": {
     "linkAbout": "О сайте",
-    "linkHome": "Главная"
+    "linkHome": "Главная",
+    "linkProfile": "Профиль"
   },
   "loading": "Загрузка",
   "notFound": {
@@ -13,5 +14,9 @@
   },
   "error.title": "Ошибка",
   "error.btn": "Обновить",
-  "errorPage.title": "Ошибка при загрузке этой страницы"
+  "errorPage.title": "Ошибка при загрузке этой страницы",
+  "Enter": "Войти",
+  "Name": "Имя",
+  "Password": "Пароль",
+  "Leave": "Выйти"
 }

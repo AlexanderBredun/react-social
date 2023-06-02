@@ -38,8 +38,10 @@
   "no-mixed-spaces-and-tabs": "off",
   "no-multiple-empty-lines": "error",
   "@typescript-eslint/no-empty-interface": "warn",
-  
+  "react/display-name": "off",
   "linebreak-style": "off",
+  "key-spacing": ["error"],
+  
   "quotes": [
    "error",
    "single"

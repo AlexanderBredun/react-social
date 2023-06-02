@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/helpers';
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import React, { ButtonHTMLAttributes, FC, memo } from 'react';
 import cls from './Button.module.scss';
 
 export enum eBtnVariant{
@@ -21,7 +21,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     fontSize?: eBtnFontSize
 }
 
-export const Button:FC<Props> = ({ children, variant, square, fontSize,  className, ...otherProps })=> {
+export const Button = memo(({ children, variant, square, fontSize,  className, ...otherProps }: Props)=> {
 
 	const btnClasses = [
 		className,
@@ -35,5 +35,5 @@ export const Button:FC<Props> = ({ children, variant, square, fontSize,  classNa
 			{children}
 		</button>
 	);
-};
+});
 

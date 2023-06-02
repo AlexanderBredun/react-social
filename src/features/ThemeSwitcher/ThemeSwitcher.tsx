@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Button } from '@/shared/ui/Button';
 
 // import DarkIcon from "@/shared/assets/icons/theme-dark.svg";
@@ -9,7 +9,7 @@ import cls from './ThemeSwitcher.module.scss';
 import { classNames } from '@/shared/lib/helpers';
 
 
-export const ThemeSwitcher = ()=> {
+export const ThemeSwitcher = memo(()=> {
 
 	const { theme, setTheme } = useTheme();
 
@@ -24,5 +24,5 @@ export const ThemeSwitcher = ()=> {
        
 		</Button>
 	);
-};
+});
 

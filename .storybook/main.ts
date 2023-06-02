@@ -1,7 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import { getCssLoader } from '../config/build/helpers/getCssLoader';
 import path from "path";
-import { RuleSetRule } from "webpack";
+import { DefinePlugin, RuleSetRule } from "webpack";
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -41,6 +41,10 @@ const config: StorybookConfig = {
     };
 
     config.module.rules.push(getCssLoader({isDev: true}));
+
+    config.plugins?.push(new DefinePlugin({
+			__IS_DEV__: true
+		}),)
 
     return config;
 

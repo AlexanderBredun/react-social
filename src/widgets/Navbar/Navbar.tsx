@@ -1,15 +1,13 @@
 import { classNames } from '@/shared/lib/helpers';
-import { FC, useState } from 'react';
-
-
+import {  memo, useCallback, useState } from 'react';
 import cls from './Navbar.module.scss';
-
-import { AppLink } from '@/shared/ui/AppLink';
-import { eVariant } from '@/shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
-import { Modal } from '@/shared/ui/Modal';
-import { Link } from 'react-router-dom';
-import { eRouteNames } from '@/shared/lib/types';
+import { Button } from '@/shared/ui/Button';
+import { eBtnVariant } from '@/shared/ui/Button/Button';
+import { ModalLogin } from '@/features/ModalLogin';
+import { useAppDispatch, useAppSelector } from '@/app/store/hooks/storeHooks';
+import { userActions } from '@/entities/User';
+import { LOCAL_STORAGE } from '@/shared/lib/helpers/constants';
 
 
 interface Props {
@@ -18,26 +16,44 @@ interface Props {
 }
 
 
-export const Navbar: FC<Props> = ({ className }) => {
+export const Navbar = memo(({ className }: Props) => {
 
 	const { t } = useTranslation();
 
 	const [isOpen, setIsOpen] = useState(false);
+	const dispatch = useAppDispatch();
+
+	const user = useAppSelector(state => state.user.authData);
+
+	const logOut = useCallback(()=> {
+		dispatch(userActions.removeUser());
+		localStorage.removeItem(LOCAL_STORAGE.USER);
+	}, [dispatch]);
+
+	if(user){
+		return (
+			<div className={classNames(cls.navbar, [className])}>
+				<div className={cls.wrapper}>
+					<Button variant={eBtnVariant.CLEAR} onClick={logOut}>
+						{t('Leave')}
+					</Button>
+				</div>
+				
+			</div>
+		);
+	}
 	
 
 	return (
 		<div className={classNames(cls.navbar, [className])}>
-			<button onClick={()=> setIsOpen(true)}>
-				open
-			</button>
-			<Modal isOpen={isOpen} onClose={()=> setIsOpen(false)} >
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptate cupiditate quo expedita ipsam ex dolorem, magni nemo architecto, praesentium vero autem iure nostrum fugit ut sint atque eveniet minima.</h1>
-				<Link to={eRouteNames.ABOUT}>go</Link>
-			</Modal>
-			<div className={classNames(cls['navbar__left'])}>
-				<h1>123</h1>
+			<div className={cls.wrapper}>
+				<ModalLogin isOpen={isOpen} onClose={()=> setIsOpen(false)} />
+				<Button variant={eBtnVariant.CLEAR} onClick={()=> setIsOpen(true)}>
+					{t('Enter')}
+				</Button>
 			</div>
+			
 		</div>
 	);
-};
+});
 

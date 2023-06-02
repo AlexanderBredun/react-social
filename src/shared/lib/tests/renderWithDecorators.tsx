@@ -8,7 +8,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 interface IOptions{
 	route?: string;
-	initialState?: StateSchema
+	initialState?: DeepPartial<StateSchema>
 }
 
 function renderWithDecorators(component: ReactNode, options: IOptions = {}) {
@@ -17,7 +17,7 @@ function renderWithDecorators(component: ReactNode, options: IOptions = {}) {
 		initialState
 	} = options;
 	return (
-		<StoreProvider initialState={initialState}>
+		<StoreProvider initialState={initialState as StateSchema}>
 			<MemoryRouter initialEntries={[route]}>
 				<I18nextProvider i18n={testConfig}>
 					{component}

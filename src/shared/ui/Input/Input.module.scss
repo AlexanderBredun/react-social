@@ -1,0 +1,55 @@
+
+.input-field{
+  position: relative;
+  
+  &.password-type{
+    .input{
+      padding-right: 5rem;
+    }
+  }
+
+  .input{
+    border-radius: calc(var(--radius-def) * 2);
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-blue-500);
+    padding: .5rem 2rem;
+    font-size: var(--fz-size-m);
+    font-family: var(--font-default);
+    width: 100%;
+  }
+
+  .pass-icon{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translate3d(0, -50%, 0);
+    transition: .3s;
+  }
+
+  label{
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translate3d(0, -50%, 0);
+    transition: .3s;
+  }
+
+  &.has-value, &:focus-within {
+    /* allows label to be absolute */
+ 
+
+    label {
+      position: absolute;
+          
+      /* following values might need adjustment based on existing styles and desired outcome */
+      top: 0;
+      left: max(3%, 10px);
+      font-size: var(--fz-size-sm);
+      background: var(--bg-main);
+      padding: 0 5px;
+    }
+
+  }
+}

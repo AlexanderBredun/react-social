@@ -1,2 +1,2 @@
 export { createStore } from './store';
-export type { StateSchema } from './types/stateScheme';
+export type { StateSchema, StateSchemaKeys, ReducerManager, ReduxWithReducerManager } from './types/stateScheme';

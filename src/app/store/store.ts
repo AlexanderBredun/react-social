@@ -1,19 +1,33 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { StateSchema } from './types/stateScheme';
+import { AnyAction, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
+import { StateSchema, ReduxWithReducerManager } from './types/stateScheme';
 import { counterReducer } from '@/entities/Counter';
+import { userReducer } from '@/entities/User';
 
-export const createStore = (initialState?: StateSchema) => {
-	return configureStore<StateSchema>({
-		reducer: {
-			counter: counterReducer
-		},
-		devTools: __IS_DEV__,
-		preloadedState: initialState
-	});
+import { createReducerManager } from './reducerManager';
+
+const initialReducers: ReducersMapObject<StateSchema, AnyAction> = {
+	counter: counterReducer,
+	user: userReducer,
 };
 
-const store = createStore();
+export const createStore = (initialState?: StateSchema) => {
+	const reducerManager = createReducerManager(initialReducers);
 
-export type RootState = ReturnType<typeof store.getState>
+	const initStore = configureStore<StateSchema>({
+		reducer: reducerManager.reduce,
+		devTools: __IS_DEV__,
+		preloadedState: initialState,
+		
+	});
+
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
+	initStore.reducerManager = reducerManager;
+
+	return initStore;
+};
+
+
+export type RootState = ReturnType< ReturnType<typeof createStore>['getState']>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = ReturnType< typeof createStore>['dispatch']

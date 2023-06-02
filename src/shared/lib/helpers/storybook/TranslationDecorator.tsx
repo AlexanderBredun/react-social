@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import testConfig from './i18next';
 import { I18nextProvider } from 'react-i18next';
-export const TranslationDecorator = (Story, context) => {
+import { StoryContext, StoryFn } from '@storybook/react';
+export const TranslationDecorator = (Story: StoryFn, context: StoryContext) => {
 	const { locale } = context.globals;
 
 	useEffect(() => {
