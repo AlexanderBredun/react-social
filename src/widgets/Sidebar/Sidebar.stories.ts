@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Sidebar } from './Sidebar';
+import { StoreDecorator } from '@/shared/lib/helpers/storybook/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Sidebar> = {
@@ -12,6 +13,7 @@ const meta: Meta<typeof Sidebar> = {
 	argTypes: {
 		//  backgroundColor: { control: 'color' },
 	},
+	
 };
 
 export default meta;
@@ -23,5 +25,25 @@ export const Primary: Story = {
 	args: {
 		children: 'Sidebar',
 	},
+	decorators: [StoreDecorator({
+		user: {
+			authData: undefined
+		}
+	})]
+};
+
+export const WithAuth: Story = {
+	// More on args: https://storybook.js.org/docs/react/writing-stories/args
+	args: {
+		children: 'Sidebar',
+	},
+	decorators: [StoreDecorator({
+		user: {
+			authData: {
+				id: 'test',
+				username: 'test',
+			}
+		}
+	})]
 };
 

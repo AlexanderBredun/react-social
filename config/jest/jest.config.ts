@@ -10,7 +10,9 @@ import path from 'path';
 
 export default {
 	globals: {
-		__IS_DEV__: true
+		__IS_DEV__: true,
+		__API_BASE_URL__: '',
+		__PROJECT__: 'jest',
 	},
 	clearMocks: true,
 	coveragePathIgnorePatterns: [
@@ -30,7 +32,7 @@ export default {
 	rootDir: '../../',
 	testEnvironment: 'jsdom',
 	
-	testMatch:  [
+	testMatch: [
 		'<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
 	],
 	setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],

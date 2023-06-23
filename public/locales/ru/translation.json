@@ -6,7 +6,8 @@
   "header": {
     "linkAbout": "О сайте",
     "linkHome": "Главная",
-    "linkProfile": "Профиль"
+    "linkProfile": "Профиль",
+    "linkArticles": "Статьи"
   },
   "loading": "Загрузка",
   "notFound": {
@@ -15,8 +16,18 @@
   "error.title": "Ошибка",
   "error.btn": "Обновить",
   "errorPage.title": "Ошибка при загрузке этой страницы",
+  "error.load": "Ошибка при загрузке, обновите страницу или попробуйте позже",
   "Enter": "Войти",
   "Name": "Имя",
   "Password": "Пароль",
-  "Leave": "Выйти"
+  "Leave": "Выйти",
+  "Currency": "Валюта",
+  "Country": "Страна",
+  "error": {
+    "required": "Это поле обязательное"
+  },
+  "Comments": "Комментарии",
+  "There is no comments yet": "Комментариев пока нет",
+  "Views": "Просмотры",
+  "Read more": "Читать далее..."
 }

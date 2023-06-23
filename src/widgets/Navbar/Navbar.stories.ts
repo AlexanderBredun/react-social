@@ -32,9 +32,7 @@ export const Primary: Story = {
 export const UserLoggedIn: Story = {
 	// More on args: https://storybook.js.org/docs/react/writing-stories/args
 	decorators: [StoreDecorator({
-		user: {
-			authData: {}
-		}
+		user: {}
 	})]
 };
 

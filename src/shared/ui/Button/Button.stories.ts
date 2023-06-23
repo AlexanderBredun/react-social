@@ -69,4 +69,10 @@ export const Disabled: Story = {
 		disabled: true
 	},
 };
+export const Centerd: Story = {
+	args: {
+		children: 'Button',
+		position: 'center'
+	},
+};
 

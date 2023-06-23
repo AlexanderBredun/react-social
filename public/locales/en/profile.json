@@ -1,0 +1,13 @@
+{
+  "Edit": "Edit",
+  "Name": "Name",
+  "Lastname": "Lastname",
+  "LinkAvatar": "Link to avatar",
+  "HeadingErrorLoading": "Something went wrong",
+  "SubHeadingErrorLoading": "Try reload page or try later",
+  "Cancel": "Cancel",
+  "Username": "Username",
+  "Age": "Age",
+  "City": "City",
+  "Save": "Save"
+}

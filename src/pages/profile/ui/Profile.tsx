@@ -1,8 +1,13 @@
 
-import { memo } from 'react';
-import cls from './Profile.module.scss';
+import { fetchUserProfile, profileReducer } from '@/entities/Profile';
 import { AsyncReducersReducers, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
-import { profileReducer } from '@/entities/Profile';
+import { memo, useEffect } from 'react';
+
+import { useAppDispatch } from '@/app/store/hooks/storeHooks';
+import { ProfileCard } from '@/entities/ProfileCard';
+import { eRouteNames } from '@/shared/lib/types';
+import { PageWrapper } from '@/widgets/PageWrapper';
+import { Navigate, useParams } from 'react-router-dom';
 
 interface ProfileProps{
 
@@ -13,11 +18,27 @@ const asyncReducers: AsyncReducersReducers = {
 };
 
 const ProfilePage = memo(() => {
-
 	useAsyncReducer(asyncReducers, true);
+	const dispatch = useAppDispatch();
+	const { id } = useParams<{id: string}>();
+	
+	if(!id){
+		return <Navigate to={eRouteNames.MAIN} />;
+	}
+
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	useEffect( ()=> {
+		if(__PROJECT__ !== 'storybook'){
+			dispatch(fetchUserProfile(id));
+		}
+		
+	}, [dispatch, id]);
+	
 
 	return (
-		<div>Profile</div>
+		<PageWrapper>
+			<ProfileCard />
+		</PageWrapper>
 	);
 });
 

@@ -1,0 +1,47 @@
+.danger{
+  color: var(--color-red);
+}
+
+.success{
+  color: var(--color-green);
+}
+
+.center{
+  text-align: center;
+}
+
+.left{
+  text-align: left;
+}
+
+.right{
+  text-align: right;
+}
+
+.heading{
+  &.S{
+    font-size: var(--fz-size-m);
+  }
+
+  &.L{
+    font-size: var(--fz-size-l);
+  }
+
+  &.XL{
+    font-size: var(--fz-size-xl);
+  }
+}
+
+.subheading{
+  &.S{
+    font-size: var(--fz-size-SM);
+  }
+
+  &.L{
+    font-size: var(--fz-size-m);
+  }
+
+  &.XL{
+    font-size: var(--fz-size-l);
+  }
+}

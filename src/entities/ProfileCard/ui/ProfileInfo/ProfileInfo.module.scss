@@ -1,0 +1,20 @@
+.content-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: var(--radius-def);
+  background: var(--bg-dark);
+
+  .title{
+    margin: 0 1rem 0 0;
+    white-space: nowrap;
+  }
+
+  p:last-of-type{
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+    width: 100%;
+  }
+}

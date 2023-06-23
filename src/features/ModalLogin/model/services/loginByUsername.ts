@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 import { User, userActions } from '@/entities/User';
 import { LOCAL_STORAGE } from '@/shared/lib/helpers/constants';
+import { ThunkExtraArgs } from '@/app/store/types/stateScheme';
 
 
 interface AuthDataType {
@@ -11,14 +11,14 @@ interface AuthDataType {
 }
 
 // First, create the thunk
-export const loginByUsername = createAsyncThunk<User, AuthDataType, {rejectValue: string}>(
+export const loginByUsername = createAsyncThunk<User, AuthDataType, {rejectValue: string, extra: ThunkExtraArgs | undefined}>(
 	'login/loginByUsername',
 	async (authData: AuthDataType, thunkAPI) => {
 		
 		try {
-			const response = await axios.post<User>('http://localhost:8000/login', authData);
+			const response = await thunkAPI.extra?.$api?.post<User>('/login', authData);
 			
-			if(!response.data){
+			if(!response?.data){
 				throw new Error('error');
 			}
 			thunkAPI.dispatch(userActions.setUser(response.data));

@@ -8,9 +8,9 @@ import { useRealHeight } from './hooks/useRealHeight';
 
 import { Suspense, useEffect } from 'react';
 import { ErrorBoundary } from '@/widgets/ErrorBoundary';
-import { useAppDispatch } from './store/hooks/storeHooks';
+import { useAppDispatch, useAppSelector } from './store/hooks/storeHooks';
 
-import { userActions } from '@/entities/User';
+import { getUserInited, userActions } from '@/entities/User';
 
 
 function App() {
@@ -18,7 +18,10 @@ function App() {
 	useRealHeight();
 
 	const dispatch = useAppDispatch();
+	const inited = useAppSelector(getUserInited);
 
+	console.log(inited);
+	
 	useEffect(()=> {
 		dispatch(userActions.initSetUser());
 	}, [dispatch]);
@@ -33,7 +36,13 @@ function App() {
 
 				<div className='page-with-sidebar'>
 					<Sidebar />
-					<AppRouter />
+					<p>
+						{inited}
+					</p>
+					{
+						inited && <AppRouter />
+					}
+					
 				</div>
 			</Suspense>
 		</div>

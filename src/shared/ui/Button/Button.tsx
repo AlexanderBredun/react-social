@@ -1,6 +1,9 @@
 import { classNames } from '@/shared/lib/helpers';
-import React, { ButtonHTMLAttributes, FC, memo } from 'react';
+import { Mods } from '@/shared/lib/helpers/classNames';
+import { ButtonHTMLAttributes, memo } from 'react';
 import cls from './Button.module.scss';
+
+export type tPostion = 'center' | 'left';
 
 export enum eBtnVariant{
     CLEAR = 'clear',
@@ -19,15 +22,19 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: eBtnVariant
     square?: boolean
     fontSize?: eBtnFontSize
+	position?: tPostion;
+	shake?: boolean
 }
 
-export const Button = memo(({ children, variant, square, fontSize,  className, ...otherProps }: Props)=> {
+export const Button = memo(({ children, variant, square, fontSize, position = 'left',  className, shake, ...otherProps }: Props)=> {
 
-	const btnClasses = [
+	const btnClasses:Mods = [
 		className,
-		cls[variant],
+		variant ? cls[variant] : undefined,
 		square ? cls.square : '',
-		cls[fontSize],
+		shake ? cls['shake-anim'] : undefined,
+		fontSize ? cls[fontSize] : undefined,
+		position ? cls[position] : undefined
 	];
 
 	return (

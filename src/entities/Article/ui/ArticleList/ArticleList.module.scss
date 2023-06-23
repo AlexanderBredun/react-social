@@ -1,0 +1,24 @@
+.article-list{
+  &.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    grid-gap: 3rem;
+    justify-content: center;
+
+    @include md{
+      grid-template-columns: repeat(3, 31%);
+    }
+    
+  }
+
+  &.list{
+    & > *{
+      margin: 0 0 3rem;
+
+      &:last-of-type{
+        margin: 0;
+      }
+    }
+  }
+ 
+}

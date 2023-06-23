@@ -19,7 +19,7 @@
   --bg-main-inversed: #0C1214;
   --color-primary: #141C1F;
   --color-secondary: rgb(54 52 52);
-  --color-hint: #ADBCC0;
+  --color-hint: #c5d5da;
   --color-red: #F77;
   --color-green: #62DE85;
   --color-blue: #5ED3F3;
@@ -36,9 +36,11 @@
   // spaces
   --def-padding-x: 2rem;
   --def-padding-y: 5rem;
+  --article-block-mb: 4rem;
 
   // radius
   --radius-def: 1.2rem;
+  --radius-circle: 50%;
 
   // z-index
   --z-modal: 10;

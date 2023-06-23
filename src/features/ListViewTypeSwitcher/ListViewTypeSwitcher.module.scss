@@ -1,0 +1,36 @@
+.list-type{
+  display: grid;
+  border-radius: var(--radius-def);
+  background: var(--bg-dark);
+  grid-template-columns: 1fr 1fr;
+  padding: .4rem;
+  margin: 0 0 3rem;
+
+  @include lg{
+    margin: 0;
+  }
+
+  button{
+    width: 100%;
+    height: 4.5rem;
+    border-radius: var(--radius-def) 0 0 var(--radius-def);
+
+    &:nth-child(even){
+      border-radius: 0 var(--radius-def) var(--radius-def) 0;
+    }
+
+    &:hover{
+      background: var(--color-hint);
+    }
+
+    i{
+      display: block;
+      width: 100%;
+    }
+
+    &.btn-active-type{
+      background: var(--color-hint);
+      pointer-events: none;
+    }
+  }
+}

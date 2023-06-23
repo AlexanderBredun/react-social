@@ -1,0 +1,17 @@
+.page-wrapper{
+  width: 100%;
+  max-width: 78rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.page-content{
+  padding: var(--def-padding-y) var(--def-padding-x);
+  flex-grow: 1;
+  overflow: auto;
+  height: calc(var(--doc-height, 100vh) - var(--navbar-height));
+
+  &.loading{
+    overflow: hidden;
+  }
+}

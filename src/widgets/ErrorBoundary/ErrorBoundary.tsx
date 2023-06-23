@@ -30,7 +30,7 @@ class ErrorBoundary extends React.Component<Props, State> {
 		if (this.state.hasError) {
 			
 			return (
-				<Error isLocal={this.props.isLocal} reset={()=> this.setState({ hasError: false })} />
+				<Error isLocal={Boolean(this.props.isLocal)} reset={()=> this.setState({ hasError: false })} />
 			);
 		}
    

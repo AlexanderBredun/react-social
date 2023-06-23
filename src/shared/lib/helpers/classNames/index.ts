@@ -1,7 +1,8 @@
 
-type Mods = Record<string, string | boolean>
+type ModsObj = Record<string, string | boolean | undefined>
+export type Mods = Array<string | undefined> | ModsObj
 
-export function classNames(initClassName: string, additionalClassNames?: string[] | Mods):string {
+export function classNames(initClassName: string, additionalClassNames?: Mods):string {
 
 	let addClasses = '';
 	if(!additionalClassNames){

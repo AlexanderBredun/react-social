@@ -6,7 +6,8 @@
   "header": {
     "linkAbout": "About",
     "linkHome": "Home",
-    "linkProfile": "Profile"
+    "linkProfile": "Profile",
+    "linkArticles": "Articles"
   },
   "loading": "Loading",
   "notFound": {
@@ -15,8 +16,18 @@
   "error.title": "Error",
   "error.btn": "Try again",
   "errorPage.title": "Error while loading this page",
+  "error.load": "Error while loading, refresh page ot try later",
   "Enter": "Sign in",
   "Name": "Name",
   "Password": "Password",
-  "Leave": "Sign out"
+  "Leave": "Sign out",
+  "Currency": "Currency",
+  "Country": "Country",
+  "error": {
+    "required": "This field is required"
+  },
+  "Comments": "Comments",
+  "There is no comments yet": "There is no comments yet",
+  "Views": "Views",
+  "Read more": "Read more..."
 }

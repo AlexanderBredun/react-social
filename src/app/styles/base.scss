@@ -44,12 +44,7 @@ a{
   align-items: flex-start;
 }
 
-.page-wrapper{
-  padding: var(--def-padding-y) var(--def-padding-x);
-  flex-grow: 1;
-  overflow: auto;
-  height: calc(var(--doc-height, 100vh) - var(--navbar-height));
-}
+
 
 .my-node-enter {
   opacity: 0;
@@ -67,6 +62,15 @@ a{
 .my-node-exit-active {
   opacity: 0;
   transition: opacity 1200ms;
+}
+
+.form-group{
+  position: relative;
+}
+
+.pristine-error{
+  font-size: var(--fz-size-sm);
+  color: var(--color-red);
 }
 
 .popup-showing{

@@ -1,0 +1,33 @@
+.app-select{
+  border-radius: calc(var(--radius-def) * 2);
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-blue-500);
+  padding: .5rem 2rem;
+  position: relative;
+
+  span{
+    position: absolute;
+    top: 0;
+    transform: translate3d(0, -50%, 0);
+    left: max(3%, 10px);
+    font-size: var(--fz-size-sm);
+    background: var(--bg-main);
+    padding: 0 5px;
+  }
+
+  select{
+    width: 100%;
+    border-radius: calc(var(--radius-def) * 2);
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    height: 100%;
+
+    option{
+      background: var(--bg-dark);
+      color: var(--color-primary);
+      padding: 1rem;
+    }
+  }
+}

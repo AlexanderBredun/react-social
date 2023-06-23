@@ -4,7 +4,6 @@ import { loginByUsername } from '../services/loginByUsername';
 
 
 //  write tests for selectors
-
 const initialState: LoginSchema = {
 	username: '',
 	password: '',
@@ -29,10 +28,8 @@ export const loginSlice = createSlice({
 				state.isLoading = true;
 				state.error = '';
 		  })
-		  .addCase(loginByUsername.fulfilled, (state, action) => {
+		  .addCase(loginByUsername.fulfilled, (state) => {
 				state.isLoading = false;
-				console.log(action.payload);
-			
 		  })
 		  .addCase(loginByUsername.rejected, (state, action) => {
 				state.isLoading = false;

@@ -1,2 +1,2 @@
 export { eRouteNames } from './eRouteNames';
-export { eClasses, eCountry, eCurrency } from './defTypes';
+export { eClasses } from './defTypes';

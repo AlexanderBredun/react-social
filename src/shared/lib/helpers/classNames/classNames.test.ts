@@ -19,7 +19,7 @@ describe('classNames', () => {
 		});
 
 		it('run with secondary class as object with undefined', ()=> {
-			expect(classNames('hello', { test: undefined, test1: true })).toBe('hello test1');
+			expect(classNames('hello', { test: '', test1: true })).toBe('hello test1');
 		});
 	});
 	

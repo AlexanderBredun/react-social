@@ -1,10 +1,11 @@
+import { PageWrapper } from '@/widgets/PageWrapper';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const About = memo(()=> {
 	const { t } = useTranslation('about');
 	return (
-		<div>
+		<PageWrapper>
 			<h1>
 				{t('страница about')}
 				
@@ -12,7 +13,7 @@ const About = memo(()=> {
 			<p>
 				{t('test')}
 			</p>
-		</div>
+		</PageWrapper>
 	);
 });
 

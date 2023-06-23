@@ -1,0 +1,23 @@
+.avatar-holder{
+  position: relative;
+  aspect-ratio: 1;
+  width: var(--avatar-size);
+  border-radius: var(--radius-circle);
+  overflow: hidden;
+  
+  &.center{
+    margin-right: auto;
+    margin-left: auto;
+  }
+      
+  .avatar{
+    aspect-ratio: 1;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+  }
+}

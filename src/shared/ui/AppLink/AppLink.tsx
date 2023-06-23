@@ -16,7 +16,7 @@ interface Props extends LinkProps{
 
 export const AppLink:FC<Props> = ({ children, to, variant, ...allProps })=> {
 	return (
-		<Link to={to} {...allProps} className={classNames(cls.appLink, [cls[variant]])}>
+		<Link to={to}  className={classNames(cls.appLink, [cls[variant ?? '']])} {...allProps}>
 			{children}
 		</Link>
 	);

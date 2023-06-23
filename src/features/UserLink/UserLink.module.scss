@@ -1,0 +1,41 @@
+.user{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 2rem 0 0;
+  font-weight: bold;
+  width: fit-content;
+
+  .avatar{
+    display: block;
+    margin: 0 1rem 0 0;
+  }
+
+  span{
+    max-width: 500px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &:hover{
+    span{
+      text-decoration: underline;
+    }
+  }
+}
+
+.with-time{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .user{
+    margin: 0 2rem 0 0;
+  }
+
+  p{
+    margin: 0;
+  }
+
+ 
+}

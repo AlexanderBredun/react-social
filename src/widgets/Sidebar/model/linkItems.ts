@@ -3,6 +3,7 @@ import { LinkItem } from '../ui/SidebarLinkItem/SidebarLinkItem';
 import IconHome from '@/shared/assets/icons/ico_nav_home.svg';
 import IconAbout from '@/shared/assets/icons/ico_nav_about.svg';
 import IconProfile from '@/shared/assets/icons/ico_nav_profile.svg';
+import IconArticles from '@/shared/assets/icons/ico_nav_articles.svg';
 
 export const LINK_ITEMS: LinkItem[] = [
 	{
@@ -18,6 +19,14 @@ export const LINK_ITEMS: LinkItem[] = [
 	{
 		url: eRouteNames.PROFILE,
 		name: 'header.linkProfile',
-		Icon: IconProfile
+		Icon: IconProfile,
+		needAuth: true
 	},
+	{
+		url: eRouteNames.ARTICLES,
+		name: 'header.linkArticles',
+		Icon: IconArticles,
+		needAuth: true
+	},
+	
 ];

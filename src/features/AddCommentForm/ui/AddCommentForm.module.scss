@@ -1,0 +1,17 @@
+.comment-form{
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.comment-input{
+  flex-grow: 1;
+  margin: 0 2rem 0 0;
+}
+
+.comment-btn{
+  position: sticky;
+  top: 0;
+
+}

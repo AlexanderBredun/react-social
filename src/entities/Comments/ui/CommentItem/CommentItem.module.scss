@@ -1,0 +1,13 @@
+.comment-item{
+  margin: 0 0 2rem;
+
+  .heading{
+    margin: 0 0 1rem;
+  }
+
+  .body{
+    background: var(--bg-dark);
+    padding: 3rem;
+    border-radius: var(--radius-def);
+  }
+}

@@ -8,12 +8,15 @@ export interface Paths{
 }
 
 export interface EnvVars{
-   mode: Mode
+   mode: Mode;
+   apiUrl: string;
 }
 
 export interface ConfigOptions{
     mode: Mode;
     paths: Paths;
     isDev: boolean;
+    apiUrl: string;
+    project: 'frontend' | 'storybook' | 'jest';
     port: number;
 }

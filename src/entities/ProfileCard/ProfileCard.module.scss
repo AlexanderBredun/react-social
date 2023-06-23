@@ -1,0 +1,21 @@
+.profile-loading-holder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card{
+  .top-block{
+    position: relative;
+    margin: 0 0 3rem;
+
+    .btn-edit{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  
+}

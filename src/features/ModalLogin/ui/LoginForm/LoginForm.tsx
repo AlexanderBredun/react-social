@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, memo, useCallback, MouseEvent, } from 'react';
+import { ChangeEvent, FC, memo, useCallback, MouseEvent, FormEvent, } from 'react';
 import cls from './LoginForm.module.scss';
 import { Input } from '@/shared/ui/Input';
 import { useTranslation } from 'react-i18next';
@@ -9,6 +9,7 @@ import { loginByUsername } from '../../model/services/loginByUsername';
 
 import { AsyncReducersReducers, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
 import { getLoginError, getLoginLoading, getLoginPassword, getLoginUsername } from '../../model/selectors';
+import { FormValidate } from '@/features/FormValidate';
 
 interface LoginFormProps{
 	onSuccess: ()=> void
@@ -41,7 +42,7 @@ const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
 	}, [dispatch]);
 
 
-	const loginClickHandler = useCallback(async (e: MouseEvent<HTMLButtonElement>)=> {
+	const loginClickHandler = useCallback(async (e: FormEvent<HTMLFormElement>)=> {
 		e.preventDefault();
 		const result = await dispatch(loginByUsername({
 			password,
@@ -54,21 +55,21 @@ const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
 
 	return (
 		<div>
-			<form>
+			<FormValidate submit={loginClickHandler}>
 				<div className={cls['form-content']}>
 					<div className={cls['input-holder']}>
-						<Input focused label={t('Name')} onChange={setUsername} autoComplete="username" value={username}  />
+						<Input focused label={t('Name')} onChange={setUsername} autoComplete="username" value={username} required  />
 					</div>
 					<div className={cls['input-holder']}>
-						<Input label={t('Password')} onChange={setPassword} type='password' autoComplete="current-password" value={password}  />
+						<Input label={t('Password')} onChange={setPassword} type='password' autoComplete="current-password" value={password} required  />
 					</div>
 				</div>
 				
 				{error && <div className={cls['error']}>{error}</div>}
-				<Button className={cls['btn-submit']} disabled={isLoading} onClick={loginClickHandler}>
+				<Button className={cls['btn-submit']} disabled={isLoading}>
 					{t('Enter')}
 				</Button>
-			</form>
+			</FormValidate>
 		</div>
 	
 	);

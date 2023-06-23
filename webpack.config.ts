@@ -15,6 +15,8 @@ export default (env: EnvVars)=> {
   
 	const mode = env.mode || 'development';
 	const isDev = mode === 'development';
+	const apiUrl = env.apiUrl || 'http://localhost:8000';
+	const project = 'frontend';
   
 	const PORT = 1234;
   
@@ -22,6 +24,8 @@ export default (env: EnvVars)=> {
 		paths,
 		mode,
 		isDev,
+		apiUrl,
+		project,
 		port: PORT
 	});
 

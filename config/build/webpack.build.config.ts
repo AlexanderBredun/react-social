@@ -16,7 +16,8 @@ export default function WebpackBuildConfig(options: ConfigOptions): Configuratio
 		output: {
 			path: paths.output,
 			filename: '[name].[contenthash].js',
-			clean: true
+			clean: true,
+			publicPath: '/',
 		},
 		devtool: isDev ? 'inline-source-map' : undefined,
 		devServer: isDev ? BuildDevServer(options) : undefined,

@@ -1,0 +1,83 @@
+.skelet{
+  height: var(--skelet-height, 1.5rem);
+  width: var(--skelet-width, 100%);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-light);
+  border-radius: var(--skelet-radius, var(--radius-def));
+  isolation: isolate;
+  margin: 0 0 1.5rem;
+
+  &:last-of-type{
+    margin: 0;
+  }
+
+  &::before{
+    content: '';
+    background-color: var(--color-hint);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--skelet-radius, var(--radius-def));
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(#fff, 0) 0,
+      rgba(#fff, 0.2) 20%,
+      rgba(#fff, 0.5) 60%,
+      rgba(#fff, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: '';
+    border-radius: var(--skelet-radius, var(--radius-def));
+  }
+  
+  &-img{
+    min-height:  var(--skelet-height, 45rem);
+
+    @include aspect(1,1);
+
+    margin: 0 auto 1.5rem;
+
+    &:last-of-type{
+      margin: 0 auto;
+    }
+  }
+
+  &.center{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.left{
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &.center{
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &-input{
+    min-height: 40px;
+  }
+  
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

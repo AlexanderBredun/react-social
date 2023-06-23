@@ -18,18 +18,18 @@ export const useAsyncReducer = (reducers: AsyncReducersReducers, removeOnUnmount
 	const reducersMounted = store.reducerManager.getReducerMap();
     
 	useEffect(()=> {
-		Object.entries(reducers).forEach(([key, value]: AsyncReducerEntry)=> {
+		Object.entries(reducers).forEach(([key, value])=> {
 			
-			if(!reducersMounted[key]){
-				store.reducerManager.add(key, value);
+			if(!reducersMounted[key as StateSchemaKeys]){
+				store.reducerManager.add(key as StateSchemaKeys, value);
 				dispatch({ type: `@INIT ${key} added` });
 			}
 		});
 		
 		return ()=> {
 			if(removeOnUnmount){
-				Object.entries(reducers).forEach(([key, value]: AsyncReducerEntry)=> {
-					store.reducerManager.remove(key);
+				Object.entries(reducers).forEach(([key, value])=> {
+					store.reducerManager.remove(key as StateSchemaKeys);
 					dispatch({ type: `@REMOVE ${key} removed` });
 				});
 			}

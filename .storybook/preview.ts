@@ -47,7 +47,7 @@ const preview: Preview = {
     
   },
   decorators: [ThemeDecorator, RouterDecorator, TranslationDecorator],
-    
+  
 };
 
 export default preview;

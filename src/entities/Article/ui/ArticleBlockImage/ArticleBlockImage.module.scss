@@ -1,0 +1,16 @@
+.article-image-block{
+  margin: 0 0 var(--article-block-mb);
+
+  img{
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  figcaption{
+    text-align: center;
+    font-size: var(--fz-size-sm);
+    color: var(--color-secondary);
+    margin: 1rem 0 0;
+  }
+}

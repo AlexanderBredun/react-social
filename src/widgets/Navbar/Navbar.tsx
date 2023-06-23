@@ -16,7 +16,7 @@ interface Props {
 }
 
 
-export const Navbar = memo(({ className }: Props) => {
+export const Navbar = memo(({ className = '' }: Props) => {
 
 	const { t } = useTranslation();
 

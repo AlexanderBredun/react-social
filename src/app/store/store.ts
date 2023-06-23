@@ -1,23 +1,34 @@
-import { AnyAction, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
+import { AnyAction, CombinedState, Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
 import { StateSchema, ReduxWithReducerManager } from './types/stateScheme';
 import { counterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
 
 import { createReducerManager } from './reducerManager';
+import { $api } from '@/shared/api/api';
+import { ReducersList } from '@/features/DynamicModuleLoader';
 
 const initialReducers: ReducersMapObject<StateSchema, AnyAction> = {
 	counter: counterReducer,
 	user: userReducer,
 };
 
-export const createStore = (initialState?: StateSchema) => {
-	const reducerManager = createReducerManager(initialReducers);
+export const createStore = (initialState?: StateSchema, asyncReducers?: ReducersList) => {
+	const reducerManager = createReducerManager({
+		...initialReducers,
+		...asyncReducers
+	});
 
-	const initStore = configureStore<StateSchema>({
-		reducer: reducerManager.reduce,
+	const initStore = configureStore({
+		reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
 		devTools: __IS_DEV__,
 		preloadedState: initialState,
-		
+		middleware: getDefaultMiddleware => getDefaultMiddleware({
+			thunk: {
+				extraArgument: {
+					$api
+				}
+			}
+		})
 	});
 
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment

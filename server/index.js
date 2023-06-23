@@ -52,7 +52,17 @@ server.use((req, res, next) => {
 
 	next();
 });
+server.use((req, res, next) => {
+	if (req.method === 'POST') {
+		
+		let locale = Intl.DateTimeFormat().resolvedOptions().locale;
+		req.body.createdAt = Intl.DateTimeFormat(locale, { dateStyle: 'short', timeStyle: 'short', }).format(Date.now()).toString().replace(',', '');
+		console.log(locale);
 
+	}
+	// Continue to JSON Server router
+	next();
+});
 server.use(router);
 
 // запуск сервера

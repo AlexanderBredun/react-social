@@ -40,7 +40,7 @@ const Modal:FC<ModalProps> = ({ children, width, isOpen, onClose }) => {
 		return ()=> document.body.classList.remove(eClasses.OPENED_POPUP);
 	}, [isOpen]);
 
-	const modalRef = useRef();
+	const modalRef = useRef<HTMLDivElement>(null);
 
 	const style = { '--popup-width-local': width } as React.CSSProperties;
 	return (

@@ -2,7 +2,21 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import ProfilePage from './ui/Profile';
 import { StoreDecorator } from '@/shared/lib/helpers/storybook/StoreDecorator';
+import { eCountry } from '@/entities/Country';
+import { eCurrency } from '@/entities/Currency';
+import { Profile } from '@/entities/Profile/model/types/profile';
 
+
+const profileMock: Profile = {
+	'firstname': 'sad',
+	'lastname': 'my lastnamesdssss',
+	'age': '324',
+	'currency': eCurrency.EUR,
+	'country': eCountry.France,
+	'city': 'Kramatorsk',
+	'username': 'alal111',
+	'avatar': 'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg'
+};
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof ProfilePage> = {
 	title: 'pages/ProfilePage',
@@ -13,7 +27,13 @@ const meta: Meta<typeof ProfilePage> = {
 	argTypes: {
 		//  backgroundColor: { control: 'color' },
 	},
-	decorators: [StoreDecorator({})]
+	decorators: [StoreDecorator({
+		profile: {
+			isLoading: false,
+			data: profileMock,
+			form: profileMock
+		}
+	})]
 };
 
 export default meta;

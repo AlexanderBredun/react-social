@@ -1,12 +1,11 @@
-import React, { memo } from 'react';
 
 import './Loader.scss';
 
-const Loader = memo(()=> {
+const Loader = ()=> {
 	return (
 		<div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 	);
-});
+};
 
 export {
 	Loader

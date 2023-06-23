@@ -1,0 +1,25 @@
+.copy-text{
+  position: relative;
+  padding: 0 0 0 2rem;
+  cursor: pointer;
+
+  i{
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    left: 0;
+  }
+}
+
+.copy-code{
+  background: var(--bg-dark);
+  padding: 3rem;
+  position: relative;
+
+  i{
+    right: 1.5rem;
+    top: 1.5rem;
+    position: absolute;
+    cursor: pointer;
+  }
+}
